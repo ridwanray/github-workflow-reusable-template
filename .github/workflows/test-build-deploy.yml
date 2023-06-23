@@ -30,7 +30,7 @@ jobs:
   deploy_microservice:
     uses: ridwanray/reusable-workflow-templates/.github/workflows/deploy.yml@main
     with:
-      GITHUB_REPOSITORY: ${GITHUB_REPOSITORY}
+      GITHUB_REPOSITORY:${GITHUB_REPOSITORY}
       GITHUB_BASE_REF: ${GITHUB_BASE_REF}
       GITHUB_SHA: ${GITHUB_SHA::8}
       GITHUB_REPOSITORY_OWNER: ${GITHUB_REPOSITORY_OWNER}
