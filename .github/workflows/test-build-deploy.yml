@@ -1,4 +1,4 @@
-name: Test -> Build -> Deploy
+name: Test, Build, Deploy
 on:
   pull_request:
       types: [opened, synchronize, reopened, closed]
@@ -31,11 +31,11 @@ jobs:
     uses: ridwanray/reusable-workflow-templates/.github/workflows/deploy.yml@main
     with:
       GITHUB_REPOSITORY: ${GITHUB_REPOSITORY}
-      GITHUB_BASE_REF: ${GITHUB_EVENT_NAME}
-    secrets: inheritTHUB_BASE_REF}
+      GITHUB_BASE_REF: ${GITHUB_BASE_REF}
       GITHUB_SHA: ${GITHUB_SHA::8}
       GITHUB_REPOSITORY_OWNER: ${GITHUB_REPOSITORY_OWNER}
-      GITHUB_EVENT_NAM
+      GITHUB_EVENT_NAME: ${GITHUB_EVENT_NAME}
+    secrets: inherit
     needs: build_and_push_image
 
   smoke_test:
